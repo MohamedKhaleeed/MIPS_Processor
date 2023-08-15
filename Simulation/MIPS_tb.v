@@ -23,7 +23,7 @@
 module MIPS_tb();
     reg clk;
     reg reset_n;
-    reg [15:0] test_value;
+    wire [15:0] test_value;
     
     MIPS dut(
         .clk(clk),
@@ -43,9 +43,7 @@ module MIPS_tb();
         reset_n = 0;
         #10
         reset_n = 1;
-        #500
-        reset_n = 0;
-        #10
-        $finish;
+        #700;
+        $finish();
     end
 endmodule
