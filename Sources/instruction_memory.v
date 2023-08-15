@@ -27,7 +27,7 @@ module instruction_memory(
 
     reg [31:0] ROM [0:99];
     initial
-        $readmemh("instructions_memory_content.mem", ROM);
+        $readmemh("factorial_n_machine_code.mem", ROM);
         
     assign instr = ROM[pc>>2];
     
